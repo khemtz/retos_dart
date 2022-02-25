@@ -16,8 +16,8 @@ void AreaTriangulo(int b, int a) {
   print("el area es:" + area.toString());
 }
 
-void AreaCuadrado(int b, int a) {
-  var area = b * a;
+void AreaCuadrado(int b) {
+  var area = b * b;
   print("el area es:" + area.toString());
 }
 
@@ -53,8 +53,11 @@ void main() {
       print("calculo triangulo");
       int base = LeerConsolaint("cual es la base:");
       int altura = LeerConsolaint("cual es la altura:");
-      AreaRectangulo(base, altura);
-    }
+      AreaTriangulo(base, altura);
+    } else if (respuesta == 4) {
+      print("calculo cuadrado");
+      int base = LeerConsolaint("cual es la medida de un lado:");
+      AreaCuadrado(base);
   }
   //print(radio.toString());
 }
