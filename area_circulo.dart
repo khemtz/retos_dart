@@ -28,16 +28,20 @@ int LeerConsolaint(String msje) {
   return read;
 }
 
+void Menu() {
+  print("\n\n******* MENU ********");
+  print("1.- Círculo");
+  print("2.- Rectángulo");
+  print("3.- Triángulo");
+  print("4.- Cuadrado");
+  print("0.- Salir");
+}
+
 void main() {
   var respuesta = 9;
 
   while (respuesta != 0) {
-    print("\n\n******* MENU ********");
-    print("1.- Círculo");
-    print("2.- Rectángulo");
-    print("3.- Triángulo");
-    print("4.- Cuadrado");
-    print("0.- Salir");
+    Menu();
     respuesta = LeerConsolaint("Elige una opción");
 
     switch (respuesta) {
@@ -69,7 +73,7 @@ void main() {
         break;
       default:
         {
-          print("Selección invalidad");
+          print("Haz terminado el programa");
         }
         break;
     }
