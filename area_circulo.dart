@@ -3,12 +3,22 @@ import 'dart:io';
 void AreaCirculo(int r) {
   double pi = 3.1416;
   var area = pi * (r * r);
-  print("el area es:" + area.toString());
+  print("El área es:" + area.toString());
 }
 
 void AreaRectangulo(int b, int a) {
   var area = b * a;
-  print("el area es:" + area.toString());
+  print("El área es:" + area.toString());
+}
+
+void AreaTriangulo(int ba, int h) {
+  var area = (ba * h) / 2;
+  print("El área es:" + area.toString());
+}
+
+void AreaCuadrado(int l) {
+  var area = (l * l) / 2;
+  print("El área es:" + area.toString());
 }
 
 int LeerConsolaint(String msje) {
@@ -23,24 +33,45 @@ void main() {
 
   while (respuesta != 0) {
     print("\n\n******* MENU ********");
-    print("1.- Circulo");
-    print("2.- Rectangulo");
-    print("3.- Triangulo");
+    print("1.- Círculo");
+    print("2.- Rectángulo");
+    print("3.- Triángulo");
     print("4.- Cuadrado");
     print("0.- Salir");
-    respuesta = LeerConsolaint("Elige una opcion:");
+    respuesta = LeerConsolaint("Elige una opción");
 
-    if (respuesta == 1) {
-      int radio = LeerConsolaint("cual es el radio:");
-      AreaCirculo(radio);
-    } else if (respuesta == 2) {
-      //print("calculo rectangulo");
-      int base = LeerConsolaint("cual es la base:");
-      int altura = LeerConsolaint("cual es la altura:");
-      AreaRectangulo(base, altura);
-    } else if (respuesta == 3) {
-      print("calculo triangulo");
+    switch (respuesta) {
+      case 1:
+        {
+          int radio = LeerConsolaint("¿Cuál es el radio? ");
+          AreaCirculo(radio);
+        }
+        break;
+      case 2:
+        {
+          int base = LeerConsolaint("¿Cuál es la base? ");
+          int altura = LeerConsolaint("¿Cuál es la altura? ");
+          AreaRectangulo(base, altura);
+        }
+        break;
+      case 3:
+        {
+          int base = LeerConsolaint("¿Cuál es el lado? ");
+          int altura = LeerConsolaint("¿Cuál es la altura? ");
+          AreaTriangulo(base, altura);
+        }
+        break;
+      case 4:
+        {
+          int lado = LeerConsolaint("¿Cuál es el lado? ");
+          AreaCuadrado(lado);
+        }
+        break;
+      default:
+        {
+          print("Selección invalidad");
+        }
+        break;
     }
   }
-  //print(radio.toString());
 }
