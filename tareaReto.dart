@@ -59,5 +59,4 @@ void main() {
       int base = LeerConsolaint("cual es la medida de un lado:");
       AreaCuadrado(base);
   }
-  //print(radio.toString());
 }}
